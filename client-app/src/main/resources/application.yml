@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: client-app
+  config:
+    import: optional:configserver:http://localhost:8888
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+app:
+  message: default dev message
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+app:
+  message: default prod message
